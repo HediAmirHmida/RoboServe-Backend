@@ -1,3 +1,4 @@
+require('dotenv').config(); // load environment variables from .env file
 const express = require("express");
 const mysql = require('mysql');
 const bodyParser = require('body-parser');
@@ -7,11 +8,11 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
 const db = mysql.createConnection({
-    host: 'localhost',
-    user: 'root',
-    password: 'hedi23873499&',
-    port: 3306,
-    database: 'testrobo' // Add the database name here
+    host: process.env.DB_HOST,
+    user: process.env.DB_USER,
+    password: process.env.DB_PASSWORD,
+    port: process.env.DB_PORT,
+    database: process.env.DB_NAME
 });
 
 // Connect to MySQL
@@ -140,12 +141,8 @@ app.post('/reset-password', (req, res) => {
 
 
 
-const PORT = 3000;
-
-//app.listen(PORT, () => {
-  //  console.log(`Server is running on port ${PORT}`);
-//});
-const HOST = '192.168.1.66'; // Bind to this IP address
+const PORT = process.env.PORT || 3000;
+const HOST = process.env.HOST || '192.168.1.66';
 
 app.listen(PORT, HOST, () => {
     console.log(`Server is running on http://${HOST}:${PORT}`);
