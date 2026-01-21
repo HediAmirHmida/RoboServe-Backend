@@ -4,7 +4,7 @@ RESTful backend for RoboServe: a smart delivery and order management system inte
 
 📌 Overview
 
-This backend powers the RoboServe ecosystem, managing order workflows, database persistence, and robot communication. It provides RESTful APIs that connect the Flutter mobile app with a Bluetooth-enabled delivery robot.
+This backend powers the RoboServe ecosystem, managing order workflows, database persistence, and robot communication. It provides RESTful APIs that connect the Flutter mobile app with a Bluetooth-enabled delivery-robot.
 
 🚀 Features
 
